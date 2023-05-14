@@ -470,7 +470,7 @@
       const thisCartProduct = this;
       thisCartProduct.dom = {};
       thisCartProduct.dom.wrapper = element;
-      thisCartProduct.dom.amountWidget = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.AmountWidget);
+      thisCartProduct.dom.amountWidget = thisCartProduct.dom.wrapper.querySelector(select.cartProduct.amountWidget);
       thisCartProduct.dom.wrapper.price =
         thisCartProduct.dom.wrapper.querySelector(select.cartProduct.price);
       thisCartProduct.dom.wrapper.edit =
