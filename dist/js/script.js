@@ -511,11 +511,14 @@
       }
       thisCart.totalPrice = subtotalPrice + deliveryFee;
       totalPrice = thisCart.totalPrice;
+
       thisCart.dom.deliveryFee.innerHTML = deliveryFee;
       thisCart.dom.subtotalPrice.innerHTML = subtotalPrice;
       thisCart.dom.totalPrice.innerHTML = totalPrice;
       thisCart.dom.totalNumber.innerHTML = totalNumber;
       thisCart.dom.totalPriceWrapper.innerHTML = totalPrice; 
+      thisCart.totalNumber = totalNumber;
+      
     
     }
     remove(cartProduct) {
@@ -534,10 +537,10 @@
       const payload = {
         phone: thisCart.dom.phone.value,
         address: thisCart.dom.address.value,
-        totalPrice: thisCart.totalPrice,
-        subtotalPrice: thisCart.subtotalPrice,
-        totalNumber: thisCart.totalNumber,
-        deliveryFee: thisCart.deliveryFee,
+        totalPrice: thisCart.dom.totalPrice,
+        subtotalPrice: thisCart.dom.subtotalPrice,
+        totalNumber: thisCart.dom.totalNumber,
+        deliveryFee: thisCart.dom.deliveryFee,
         products: [],
       };
       for(let prod of thisCart.products) {
@@ -597,7 +600,7 @@
         console.log('Element was changed!');
         thisCartProduct.price = thisCartProduct.dom.input.value * thisCartProduct.priceSingle;
         thisCartProduct.dom.price.innerHTML = thisCartProduct.price;
-        thisCartProduct.amount = thisCartProduct.dom.input.value;
+        thisCartProduct.amount = thisCartProduct.amountWidget.value;
         console.log('thisCartProduct.amount: ' + thisCartProduct.amount);
       });
     }
